@@ -1,0 +1,28 @@
+greet_user:
+  name: Greet user
+  description: Prints a personalized greeting
+  shell: echo "Hello, {{ user_name }}!"
+  parameters:
+    user_name:
+      description: Name displayed in the greeting
+      default: world
+list_directory:
+  name: List directory
+  description: Lists files in a directory (Linux/Unix required)
+  shell: ls -la {{ directory }}
+  parameters:
+    directory:
+      description: Directory to list the contents of
+      default: .
+      regex: "^[\\w./_-]+$"
+show_file_head:
+  name: Show file head
+  description: Prints the first N lines of a file (Linux/Unix required)
+  shell: head -n {{ lines }} {{ file_path }}
+  parameters:
+    file_path:
+      description: Path to the file to preview
+    lines:
+      description: Number of lines to print
+      default: "20"
+      regex: "^\\d+$"

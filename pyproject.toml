@@ -1,0 +1,21 @@
+[project]
+name = "clive"
+version = "0.1.0"
+description = "CLI + alive: YAML-driven shell command runner"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.8",
+    "jinja2>=3.1.6",
+    "loguru>=0.7.3",
+    "pyyaml>=6.0.3",
+    "types-click>=7.1.8",
+    "types-pyyaml>=6.0.12.20250915",
+]
+
+[project.scripts]
+clive = "clive.main:main"
+
+[build-system]
+requires = ["uv_build>=0.9.26,<0.10.0"]
+build-backend = "uv_build"
